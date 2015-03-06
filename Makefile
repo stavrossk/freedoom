@@ -1,5 +1,4 @@
-# Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
-#               2010, 2011, 2013, 2014
+# Copyright (c) 2001-2014
 # Contributors to the Freedoom project.  All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -69,12 +68,6 @@ wadinfo_phase2.txt: buildcfg.txt subdirs lumps/freedoom.lmp
 wadinfo_freedm.txt : buildcfg.txt subdirs lumps/freedoom.lmp lumps/freedm.lmp
 	$(CPP) -P -DFREEDM < $< | scripts/wadinfo-builder.py -dummy > $@
 
-%.wad.gz: %.wad
-	gzip < $< > $@
-	chmod o-r $<
-	md5sum $<.gz > $<.md5sum
-	rm -f $<
-
 # deutex doesnt allow redirects for the filenames in the texture
 # entries, so we have to change the texture1 symlink to point
 # to whichever wad we are working on
@@ -103,16 +96,27 @@ $(FREEDOOM2): wadinfo_phase2.txt subdirs
 	rm -f $@
 	$(DEUTEX) $(DEUTEX_ARGS) -iwad -lumps -patch -flats -sounds -musics -graphics -sprites -levels -build wadinfo_phase2.txt $@
 
-doc: BUILD-SYSTEM.adoc README.adoc
-	asciidoc BUILD-SYSTEM.adoc
-	asciidoc README.adoc
+%.html: %.adoc
+	asciidoc $<
+
+doc: $(patsubst %.adoc,%.html,$(wildcard *.adoc))
 
 DISTDOCS=COPYING CREDITS README.html
 
+.PHONY: dist
+
 # Due to convoluted reasons, the WADs must directly proceed the game name.
-dist: $(OBJS) doc
+dist: $(OBJS) README.html
 	VERSION=$(VERSION) scripts/makepkgs freedm $(FREEDM) $(DISTDOCS)
 	VERSION=$(VERSION) scripts/makepkgs freedoom $(FREEDOOM1) $(FREEDOOM2) $(DISTDOCS)
+
+json: $(OBJS)
+ifndef JSON
+	@echo "Define JSON as the file to output." >&2
+	@exit 1
+else
+	JSON=$(JSON) VERSION=$(VERSION) scripts/makejson
+endif
 
 clean:
 	rm -f	*.html deutex.log $(OBJS) \
@@ -122,6 +126,7 @@ clean:
 		./lumps/freedm.lmp
 	-rmdir $(WADS)
 
+	$(MAKE) -C dist clean
 	$(MAKE) -C graphics/text clean
 	$(MAKE) -C graphics/titlepic clean
 	$(MAKE) -C lumps/cph/misc-lumps clean
@@ -129,3 +134,49 @@ clean:
 	$(MAKE) -C lumps/dmxgus clean
 	$(MAKE) -C lumps/textures clean
 
+prefix?=/usr/local
+bindir?=/bin
+mandir?=/share/man
+waddir?=/share/games/doom
+target=$(DESTDIR)$(prefix)
+
+%.6:
+	$(MAKE) -C dist man-$*
+
+%.png:
+	$(MAKE) -C dist icon-$*
+
+# This is bad because it assumes the IWADs will always be defined like
+# this.  I just can't see another way to do it.  Fix later if possible.
+
+install-%: $(WADS)/%.wad %.6 %.png
+	install -d "$(target)$(bindir)"
+	install -m 755 dist/freedoom "$(target)$(bindir)/$*"
+	install -d "$(target)$(mandir)/man6"
+	install -m 644 dist/$*.6 "$(target)$(mandir)/man6"
+	install -d "$(target)$(waddir)"
+	install -m 644 $(WADS)/$*.wad "$(target)$(waddir)"
+	install -d "$(target)/share/applications"
+	install -m 644 dist/$*.desktop "$(target)/share/applications"
+	install -d "$(target)/share/appdata"
+	install -m 644 dist/$*.appdata.xml "$(target)/share/appdata"
+	install -d "$(target)/share/icons"
+	install -m 644 dist/$*.png "$(target)/share/icons/$*.png"
+
+uninstall-%:
+	rm "$(target)$(bindir)/$*"
+	rm "$(target)$(mandir)/man6/$*.6"
+	rm "$(target)$(waddir)/$*.wad"
+	rm "$(target)/share/applications/$*.desktop"
+	rm "$(target)/share/appdata/$*.appdata.xml"
+	rm "$(target)/share/icons/$*.png"
+	-rmdir -p "$(target)$(bindir)"
+	-rmdir -p "$(target)$(mandir)/man6"
+	-rmdir -p "$(target)$(waddir)"
+	-rmdir -p "$(target)/share/applications"
+	-rmdir -p "$(target)/share/appdata"
+	-rmdir -p "$(target)/share/icons"
+
+install: install-freedm install-freedoom1 install-freedoom2
+
+uninstall: uninstall-freedm uninstall-freedoom1 uninstall-freedoom2

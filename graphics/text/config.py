@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2013
+# Copyright (c) 2013-2014
 # Contributors to the Freedoom project.  All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -101,12 +101,17 @@ white_graphics = {
 
 blue_graphics = {
 	'm_disopt': 'DISPLAY OPTIONS',
-	'm_episod': 'Choose Episode:',
+	'm_episod': 'Choose Chapter:',
 	'm_optttl': 'OPTIONS',
 	'm_skill': 'Choose Skill Level:',
 }
 
 red_graphics = {
+	# Title for the HELP/HELP1 screen:
+	'helpttl': 'Help',
+	# Title for CREDIT
+	'freettl': 'Freedoom',
+
 	'm_ngame': 'New Game',
 	'm_option': 'Options',
 	'm_loadg': 'Load Game',
@@ -115,9 +120,9 @@ red_graphics = {
 	'm_quitg': 'Quit Game',
 
 	'm_newg': 'NEW GAME',
-	'm_epi1': 'First Episode',
-	'm_epi2': 'Second Episode',
-	'm_epi3': 'Third Episode',
+	'm_epi1': 'Outpost Outbreak',
+	'm_epi2': 'Military Labs',
+	'm_epi3': 'Event Horizon',
 	'm_epi4': 'Double Impact',
 
 	'm_jkill': 'Please don\'t kill me!',
@@ -214,12 +219,6 @@ red_graphics = {
 	# match the other main menu graphics. Eternity Engine doesn't
 	# use it any more, and on SMMU there's enough space for it.
 	'm_multi': 'Multiplayer',
-}
-
-# Rendered with transparent background:
-transparent_graphics = {
-	# Title for the HELP/HELP1 screen:
-	'helpttl': 'Help',
 }
 
 def read_bex_lump(filename):

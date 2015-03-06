@@ -1,3 +1,39 @@
+Patch File for DeHackEd v3.0
+Doom version = 19
+Patch format = 6
+
+# Copyright (c) Contributors to the Freedoom project. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#
+#   * Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#   * Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#   * Neither the name of the freedoom project nor the names of its
+#     contributors may be used to endorse or promote products derived from
+#     this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+# IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+# TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+# PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
+# OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+# PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+# LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# This is a magic comment recognized by Chocolate Doom, so that the
+# BEX [STRINGS] section below will be parsed:
+#
+#   *allow-extended-strings*
+
 [PARS]
 # Par times don't matter so much for FreeDM, just set all to zero.
 par  1 0
@@ -36,7 +72,7 @@ par 32 0
 [STRINGS]
 # Text shown on startup in Boom-compatible ports. This is all in
 # STARTUP5, so if a mod replaces STARTUP1-4, it will still be shown.
-STARTUP5============================================================================\nThis is FreeDM, the free content deathmatch FPS.\n\nFreeDM is freely redistributable under the terms of the modified BSD\nlicense. Check out the Freedoom website for more information:\n\n    http://freedoom.github.io/\n============================================================================
+STARTUP5============================================================================\nThis is FreeDM, the free content deathmatch FPS.\n\nFreeDM is freely redistributable under the terms of the modified BSD\nlicense. Check out the Freedoom website for more information:\n\n    https://freedoom.github.io/\n============================================================================
 GOTARMOR = picked up a light armor vest.
 GOTMEGA = picked up a heavy armor vest.
 GOTHTHBONUS = got a 1% health bonus.
@@ -143,37 +179,37 @@ CC_SPIDER = large technospider
 CC_CYBER = assault tripod
 CC_HERO = savior of humanity
 HUSTR_1 = DM01: Tech Test
-HUSTR_2 = DM02: Tech Arena
-HUSTR_3 = DM03: AGM Ammo Depot
-HUSTR_4 = DM04: FreeDM Maze
-HUSTR_5 = DM05: The Exile
-HUSTR_6 = DM06: Energy Facility
+HUSTR_2 = DM02: Natural Station
+HUSTR_3 = DM03: Issues of Claveria
+HUSTR_4 = DM04: Metal
+HUSTR_5 = DM05: Protox Hideout
+HUSTR_6 = DM06: Tomb of Ledemir
 HUSTR_7 = DM07: Main Stronghold
-HUSTR_8 = DM08: Substation 45
-HUSTR_9 = DM09: Weapons factory
-HUSTR_10 = DM10: Sacred Dead
-HUSTR_11 = DM11: Primary Defense Fort
-HUSTR_12 = DM12: Hazard Store
-HUSTR_13 = DM13: Natural Station
-HUSTR_14 = DM14: Water Recycling
-HUSTR_15 = DM15: Tag Deathmatch
-HUSTR_16 = DM16: Fourplay
-HUSTR_17 = DM17: Flooded base
-HUSTR_18 = DM18
-HUSTR_19 = DM19
-HUSTR_20 = DM20: Nihilist
-HUSTR_21 = DM21: Tomb of Ledemir
-HUSTR_22 = DM22: Mansion Yard
-HUSTR_23 = DM23: Up 'n Down Canyon
-HUSTR_24 = DM24
-HUSTR_25 = DM25
-HUSTR_26 = DM26
-HUSTR_27 = DM27: Punk tech
-HUSTR_28 = DM28: Last Gate
-HUSTR_29 = DM29: Loss of Control
+HUSTR_8 = DM08: Artifact Base
+HUSTR_9 = DM09: Forgotten Ruins
+HUSTR_10 = DM10: Substation 45
+HUSTR_11 = DM11: Gate for Hell
+HUSTR_12 = DM12: Up 'n Down Canyon
+HUSTR_13 = DM13: Sacred Dead
+HUSTR_14 = DM14: Hazard Store
+HUSTR_15 = DM15: AGM Ammo Depot
+HUSTR_16 = DM16: Single Barreled
+HUSTR_17 = DM17: Punk Tech
+HUSTR_18 = DM18: Energy Facility
+HUSTR_19 = DM19: Tech Isle
+HUSTR_20 = DM20: Warehouse
+HUSTR_21 = DM21: Water Recycling
+HUSTR_22 = DM22: Fourplay
+HUSTR_23 = DM23: Confrontation
+HUSTR_24 = DM24: Flooded Base
+HUSTR_25 = DM25: Mansion Yard
+HUSTR_26 = DM26: All Green
+HUSTR_27 = DM27: The Exile
+HUSTR_28 = DM28: Weapons Factory
+HUSTR_29 = DM29: Tag Deathmatch
 HUSTR_30 = DM30: Last Man Standing
-HUSTR_31 = DM31: Single Barreled
-HUSTR_32 = DM32: All Green
+HUSTR_31 = DM31
+HUSTR_32 = DM32
 PHUSTR_1 = DM01
 PHUSTR_2 = DM02
 PHUSTR_3 = DM03
@@ -258,7 +294,9 @@ STSTR_NCON = noclip on
 STSTR_NCOFF = noclip off
 STSTR_CHOPPERS = vroom!
 STSTR_BEHOLD = v=invuln, s=steroids, i=invis, r=hazard, a=map, l=night vision
-NIGHTMARE = this is the highest skill level.\nnot recommended unless you're experienced.\n\n(press y to confirm)
+NIGHTMARE = this is the highest skill level.\n\
+            not recommended unless you're experienced.\n\n\
+            (press y to confirm)
 #HUSTR_CHATMACRO1
 #HUSTR_CHATMACRO2
 #HUSTR_CHATMACRO3
@@ -276,22 +314,46 @@ NIGHTMARE = this is the highest skill level.\nnot recommended unless you're expe
 #HUSTR_TALKTOSELF5
 #HUSTR_MESSAGESENT
 # For FreeDM we shouldn't be seeing these...
-E1TEXT = You've finished episode 1!
-E2TEXT = You've finished episode 2!
-E3TEXT = You've finished episode 3!
-E4TEXT = You've finished episode 4!
+E1TEXT = You've finished chapter 1!
+E2TEXT = You've finished chapter 2!
+E3TEXT = You've finished chapter 3!
+E4TEXT = You've finished chapter 4!
 # After MAP06, before MAP07:
-C1TEXT = You're playing FreeDM, the Freedoom\ndeathmatch spinoff project.\n\nFor more information about Freedoom\nand FreeDM, see:\n\nhttp://freedoom.github.io/
+C1TEXT = You're playing FreeDM, the Freedoom\n\
+         deathmatch spinoff project.\n\n\
+         For more information about Freedoom\n\
+         and FreeDM, see:\n\n\
+         https://freedoom.github.io/
 # After MAP11, before MAP12:
-C2TEXT = You're playing FreeDM, the Freedoom\ndeathmatch spinoff project.\n\nFor more information about Freedoom\nand FreeDM, see:\n\nhttp://freedoom.github.io/
+C2TEXT = You're playing FreeDM, the Freedoom\n\
+         deathmatch spinoff project.\n\n\
+         For more information about Freedoom\n\
+         and FreeDM, see:\n\n\
+         https://freedoom.github.io/
 # After MAP20, before MAP21:
-C3TEXT = You're playing FreeDM, the Freedoom\ndeathmatch spinoff project.\n\nFor more information about Freedoom\nand FreeDM, see:\n\nhttp://freedoom.github.io/
+C3TEXT = You're playing FreeDM, the Freedoom\n\
+         deathmatch spinoff project.\n\n\
+         For more information about Freedoom\n\
+         and FreeDM, see:\n\n\
+         https://freedoom.github.io/
 # After MAP30 (endgame text):
-C4TEXT = You're playing FreeDM, the Freedoom\ndeathmatch spinoff project.\n\nFor more information about Freedoom\nand FreeDM, see:\n\nhttp://freedoom.github.io/
+C4TEXT = Thank you for playing FreeDM, the\n\
+         Freedoom deathmatch spinoff project.\n\n\
+         For more information about Freedoom\n\
+         and FreeDM, see:\n\n\
+         https://freedoom.github.io/
 # Before MAP31 (secret level #1):
-C5TEXT = You've found the FreeDM secret level.\n\nHope you aren't too attached to\nyour double barreled shotgun!
+C5TEXT = You're playing FreeDM, the Freedoom\n\
+         deathmatch spinoff project.\n\n\
+         For more information about Freedoom\n\
+         and FreeDM, see:\n\n\
+         https://freedoom.github.io/
 # Before MAP32 (secret level #2):
-C6TEXT = You've found the second secret level.\n\nHope you like green.
+C6TEXT = You're playing FreeDM, the Freedoom\n\
+         deathmatch spinoff project.\n\n\
+         For more information about Freedoom\n\
+         and FreeDM, see:\n\n\
+         https://freedoom.github.io/
 #P1TEXT
 #P2TEXT
 #P3TEXT
@@ -356,7 +418,7 @@ OB_SPIDER=%o stood in awe of the Large Technospider.
 OB_BABY=%o let a Small Technospider get %h.
 OB_CYBORG=%o was splattered by an Assault Tripod.
 OB_WOLFSS=%o met a Sailor.
-OB_MPFIST=%o punched %k to death.
+OB_MPFIST=%k punched %o to death.
 OB_MPCHAINSAW=%o was shredded by %k's angle grinder.
 OB_MPPISTOL=%o was tickled by %k's handgun.
 OB_MPSHOTGUN=%o chewed on %k's boomstick.

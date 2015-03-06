@@ -123,11 +123,6 @@ S: Ralphis
 E: ralphis@slipgate.org
 D: Music
 
-F: doom2tr
-N: Doom 2 Retexturing Project
-E: doom2textures@justmail.de
-W: http://www.quake.cz/winclan/doom2/
-
 F: sirfragsalot
 S: Sir Fragsalot
 E: bssrpantella@hotmail.com
@@ -190,10 +185,6 @@ F: airraid
 S: AirRaid
 E: airraid666@yahoo.com
 D: Sprites, Levels, Textures
-
-F: pov
-N: Iikka Keranen
-D: POVDoom Sprites
 
 F: jayextee
 S: Jayextee
@@ -356,17 +347,13 @@ S: MDenham
 E: tathetriam@aol.com
 D: Levels
 
-F: damienc
-S: DamienC
-E: hcapello@home.com
-D: Sprites
-
 F: spinspyder
 S: SpinSpyder
 E: blcrowley@hotmail.com
 D: Sprites
 
 F: sgtcrispy
+N: Jeremy Elder
 S: SgtCrispy
 E: sha_nigtha@yahoo.com
 D: Sounds, levels
@@ -380,10 +367,6 @@ F: adamizer
 S: Adamizer
 E: adamizer9000@yahoo.com
 D: Sprites
-
-N: Dan L'Ecuyer
-E: dlecuyer@tbase.com
-D: GENMIDI Lump
 
 F: ajapted
 N: Andrew Apted
@@ -490,9 +473,9 @@ D: Sprites
 F: fraggle
 N: Simon Howard
 S: fraggle
-E: fraggle@alkali.org
-W: http://www.soulsphere.org/
-D: Chief Administrator, textures, sprites
+E: idgames@soulsphere.org
+W: https://soulsphere.org
+D: project admin, scripting and build system, textures, sprites
 
 F: joed
 N: Joe Dowland
@@ -657,8 +640,8 @@ D: levels
 F: protox
 N: Luiz Henrique Gasparin Jerônimo
 S: Protox
-E: wad_beta@hotmail.com
-D: levels
+E: xindage@gmail.com
+D: levels, textures
 
 F: mithran_denizen
 S: Mithran Denizen
@@ -694,3 +677,65 @@ N: Alexandre-Xavier Labonté-Lamoureux
 S: AXDOOMER
 E: alexandrexavier@live.ca
 D: patches
+
+F: jewellds
+N: Daniel Jewell
+S: Jewellds
+E: jewellds@gmail.com
+D: levels
+
+F: raymoohawk
+N: Adrian Cabrera
+E: cancer_kaoru@live.com
+S: raymoohawk
+W: http://raymoohawk.deviantart.com/
+D: sprites
+
+F: nub_hat
+N: Mikael Haladyn
+E: mikaelhhome@yahoo.dk
+S: nub_hat
+D: levels, musics
+
+F: captainw
+S: CaptainW
+E: avortement.rate@gmail.com
+D: graphics
+
+F: Zucca
+N: Ilja Sara
+E: ilja.sara@kahvipannu.com
+D: levels
+
+F: chungy
+N: Mike Swanson
+S: chungy
+E: mikeonthecomputer@gmail.com
+D: project admin, build system, repo maintenance
+
+F: MP2E
+N: Cray Elliott
+S: mp2e
+E: MP2E@archlinux.us
+D: lumps (demos, playtesting)
+
+F: Voltcom9
+S: voltcom9
+E: Earthbound.Glenn@gmail.com
+D: level/chapter names
+
+F: jmickle
+N: Jerry Mickle
+S: jmickle
+E: jaymickle@gmail.com
+D: music
+
+F: Doomkid
+S: doomkid
+E: thedevilzworker@hotmail.com
+D: freedm playtesting and demo participation
+
+F: Mogul
+S: mogul
+N: Jeremy Emerson
+D: music
